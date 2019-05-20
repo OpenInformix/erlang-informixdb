@@ -80,4 +80,11 @@ Informix ODBC Driver comes with the Informix CSDK Package, and to install Inform
 7> odbc:sql_query(Ref, "SELECT * FROM EMPLOYEE").
           {selected,["rollno","name","gender"],
           [{1,"Pratishtha","F"},{2,"John","M"},{3,"Sophie","F"}]}
-```		   
+```	
+	   
+**Associate a result set containing the whole table EMPLOYEE to the connection. The number of rows in the result set is returned.**
+```
+8> odbc:select_count(Ref, "SELECT * FROM EMPLOYEE").
+      {ok,undefined}
+```
+**Informix odbc is not returning the numer of rows count.**	
