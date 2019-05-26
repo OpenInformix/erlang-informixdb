@@ -8,20 +8,28 @@
 
 start() ->
    odbc:start(), 
-   {ok, Ref} = odbc:connect("DSN = erldsn;UID = informix;PWD = ***", []), 
+   {ok, Ref} = odbc:connect("DSN=erldsn;UID=informix;PWD=***", []), 
    io:fwrite("~p",[Ref]).
 ```
-### Compile the module:
+**Output:**
+```
+<0.78.0>
+```
+
+### To compile the module:
 ```
 D:\erl>erlc sample1.erl
 ```
 **It should create sample.beam file.**
 
-### Now, Run below command to execute complied program:
+### Now, Run below command to execute the complied program:
 ```
 D:\erl>erl -noshell -s sample1 start -s init stop
 ```
-**It should return <0.83.0>**
+**Output:**
+```
+<0.78.0>
+```
 
 
 
